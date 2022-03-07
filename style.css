@@ -1,0 +1,139 @@
+:root {
+    --clr-primary: #F76C6C;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+    color: white;
+    background-color: #f2f2f2;
+    line-height: 1.5;
+}
+
+body, h1, h2, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+nav, footer{
+    background-color: var(--clr-primary);
+    padding: 15px 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav h2 {
+    margin-right: 10px;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+}
+
+header {
+    min-height: 250px;
+    background-image: url('https://placekitten.com/1500/250');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+main {
+    color: black;
+    max-width: 65ch;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.featured-posts {
+    margin-top: 50px;
+}
+
+.featured-posts h2 {
+    margin-bottom: 30px;
+}
+
+.featured-posts > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: var(--clr-primary);
+    grid-gap: 20px;
+}
+
+.featured-posts > div article {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-weight: 600;
+    min-height: 80px;
+    min-width: 40%;
+    flex: 1;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 5px 15px #AAA;
+}
+
+.featured-posts > div :first-of-type{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    align-items: flex-start;
+    padding-top: 30px;
+}
+
+footer {
+    color: #000;
+}
+
+@media screen and (max-width: 500px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    h2 {
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    ul {
+        flex-direction: column;
+        gap: 0;
+        margin-right: 30px;
+    }
+
+    .featured-posts > div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-posts > div :first-of-type{
+        grid-column: 1 / span 2;
+    }
+}
+
+
+@media only screen {
+    h1 {
+        filter: drop-shadow(0 0 10px #222);
+    }
+}
